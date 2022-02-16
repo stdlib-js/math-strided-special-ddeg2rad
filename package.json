@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-strided-special-ddeg2rad",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Convert each element in a double-precision floating-point strided array from degrees to radians.",
   "license": "Apache-2.0",
   "author": {
