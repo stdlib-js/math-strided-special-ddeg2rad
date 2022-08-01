@@ -30,38 +30,30 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-strided-special-ddeg2rad
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-ddeg2rad = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var ddeg2rad = require( 'path/to/vendor/umd/math-strided-special-ddeg2rad/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.ddeg2rad;
-})();
-</script>
+var ddeg2rad = require( '@stdlib/math-strided-special-ddeg2rad' );
 ```
 
 #### ddeg2rad( N, x, strideX, y, strideY )
@@ -162,15 +154,10 @@ ddeg2rad.ndarray( 3, x, 2, 1, y, -1, y.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var uniform = require( '@stdlib/random-base-uniform' );
+var Float64Array = require( '@stdlib/array-float64' );
+var ddeg2rad = require( '@stdlib/math-strided-special-ddeg2rad' );
 
 var x = new Float64Array( 10 );
 var y = new Float64Array( 10 );
@@ -184,11 +171,6 @@ console.log( y );
 
 ddeg2rad.ndarray( x.length, x, 1, 0, y, -1, y.length-1 );
 console.log( y );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -197,7 +179,111 @@ console.log( y );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/strided/special/ddeg2rad.h"
+```
+
+#### stdlib_strided_ddeg2rad( N, \*X, strideX, \*Y, strideY )
+
+Converts each element in a double-precision floating-point strided array `x` from degrees to radians and assigns the results to elements in a double-precision floating-point strided array `y`.
+
+```c
+#include <stdint.h>
+
+double X[] = { 0.0, 30.0, 45.0, 60.0, 90.0, 120.0, 150.0, 180.0 };
+double Y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+int64_t N = 4;
+
+stdlib_strided_ddeg2rad( N, X, 2, Y, 2 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] int64_t` number of indexed elements.
+-   **X**: `[in] double*` input array.
+-   **strideX**: `[in] int64_t` index increment for `X`.
+-   **Y**: `[out] double*` output array.
+-   **strideY**: `[in] int64_t` index increment for `Y`.
+
+```c
+void stdlib_strided_ddeg2rad( const int64_t N, const double *X, const int64_t strideX, double *Y, const int64_t strideY );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/strided/special/ddeg2rad.h"
+#include <stdint.h>
+#include <stdio.h>
+
+int main() {
+    // Create an input strided array:
+    double X[] = { 0.0, 30.0, 45.0, 60.0, 90.0, 120.0, 150.0, 180.0 };
+
+    // Create an output strided array:
+    double Y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+    // Specify the number of elements:
+    int64_t N = 4;
+
+    // Specify the stride lengths:
+    int64_t strideX = 2;
+    int64_t strideY = 2;
+
+    // Compute the results:
+    stdlib_strided_ddeg2rad( N, X, strideX, Y, strideY );
+
+    // Print the results:
+    for ( int i = 0; i < 8; i++ ) {
+        printf( "Y[ %i ] = %lf\n", i, Y[ i ] );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -253,8 +339,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-strided-special-ddeg2rad.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-strided-special-ddeg2rad
 
-[test-image]: https://github.com/stdlib-js/math-strided-special-ddeg2rad/actions/workflows/test.yml/badge.svg?branch=v0.0.9
-[test-url]: https://github.com/stdlib-js/math-strided-special-ddeg2rad/actions/workflows/test.yml?query=branch:v0.0.9
+[test-image]: https://github.com/stdlib-js/math-strided-special-ddeg2rad/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-strided-special-ddeg2rad/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-strided-special-ddeg2rad/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-strided-special-ddeg2rad?branch=main
@@ -283,13 +369,13 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-strided-special-ddeg2rad/main/LICENSE
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/umd
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 <!-- <related-links> -->
 
-[@stdlib/math/strided/special/deg2rad]: https://github.com/stdlib-js/math-strided-special-deg2rad/tree/umd
+[@stdlib/math/strided/special/deg2rad]: https://github.com/stdlib-js/math-strided-special-deg2rad
 
-[@stdlib/math/strided/special/sdeg2rad]: https://github.com/stdlib-js/math-strided-special-sdeg2rad/tree/umd
+[@stdlib/math/strided/special/sdeg2rad]: https://github.com/stdlib-js/math-strided-special-sdeg2rad
 
 <!-- </related-links> -->
 
