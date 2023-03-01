@@ -38,12 +38,12 @@ C -->|bundle| D[esm];
 C -->|bundle| E[deno];
 C -->|bundle| F[umd];
 
-click A href "https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/strided/special/ddeg2rad"
-click B href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/main"
-click C href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/production"
-click D href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/esm"
-click E href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/deno"
-click F href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/umd"
+%% click A href "https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/strided/special/ddeg2rad"
+%% click B href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/main"
+%% click C href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/production"
+%% click D href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/esm"
+%% click E href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/deno"
+%% click F href "https://github.com/stdlib-js/math-strided-special-ddeg2rad/tree/umd"
 ```
 
 [stdlib-url]: https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/strided/special/ddeg2rad

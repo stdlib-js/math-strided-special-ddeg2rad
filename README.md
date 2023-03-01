@@ -293,8 +293,8 @@ int main() {
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/math/strided/special/deg2rad`][@stdlib/math/strided/special/deg2rad]</span><span class="delimiter">: </span><span class="description">convert each element in a strided array from degrees to radians.</span>
--   <span class="package-name">[`@stdlib/math/strided/special/sdeg2rad`][@stdlib/math/strided/special/sdeg2rad]</span><span class="delimiter">: </span><span class="description">convert each element in a single-precision floating-point strided array from degrees to radians.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/deg2rad`][@stdlib/math/strided/special/deg2rad]</span><span class="delimiter">: </span><span class="description">convert each element in a strided array from degrees to radians.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/sdeg2rad`][@stdlib/math/strided/special/sdeg2rad]</span><span class="delimiter">: </span><span class="description">convert each element in a single-precision floating-point strided array from degrees to radians.</span>
 
 </section>
 
