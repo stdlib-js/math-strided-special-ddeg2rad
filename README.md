@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ddeg2rad from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@esm/index.mjs';
+import ddeg2rad from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@v0.2.3-esm/index.mjs';
 ```
 
 #### ddeg2rad( N, x, strideX, y, strideY )
@@ -157,7 +157,7 @@ ddeg2rad.ndarray( 3, x, 2, 1, y, -1, y.length-1 );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-uniform@esm/index.mjs';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ddeg2rad from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@esm/index.mjs';
+import ddeg2rad from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ddeg2rad@v0.2.3-esm/index.mjs';
 
 var x = new Float64Array( 10 );
 var y = new Float64Array( 10 );
